@@ -1,4 +1,58 @@
-public void transformada14(int dimen, int valInit) {
+public void transformada2(int dimension, int valorElem) {
+        String[][] matriz=new String[dimension][dimension];
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = 0; c < matriz[0].length; c++) {     
+                if (c<dimension-f) {
+                    matriz[f][c]=""+(valorElem+(c+f)*(c+f+1)/2 + c); 
+                }else{
+                    matriz[f][c]="";
+                }                
+            }
+        }
+        imprimirMatriz(matriz);
+    }
+    public void transformada05(int dimen, int valInit) {
+        String[][] matriz=new String[dimen][dimen];// i =filas, j=columnas
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                matriz[i][(dimen-1)-j]=""+valInit;
+                valInit++;
+            }
+        }
+        imprimirMatrizCadena(matriz);
+    }
+    public void transformada06(int dimen, int numInit){
+       String[][] matriz=new String[dimen][dimen];// i = Fila; j=Columna
+        for (int i = 0; i < matriz.length; i++){
+            for (int j = 0; j <= i; j++){
+                matriz [i][j]=""+numInit;
+                numInit++;
+            }
+        }
+        extracted(matriz);
+    }
+
+    public void transformada07(int dimen, int numInit){
+        String[][] matriz = new String[dimen][dimen];
+        for (int i = 0; i < dimen; i++) {
+            for (int j = 0 ; j < (dimen-i); j++) {
+                matriz[i][j]=""+numInit;
+                numInit++;
+            }
+        }
+        extracted(matriz);
+    }
+    public void transformada08(int dimen, int numInit){
+        String[][] matriz = new String[dimen][dimen];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j <= (dimen-1)-i ; j++) {
+                matriz[i][(j+i)]=" "+numInit;
+                numInit++;
+            }
+        }
+        extracted(matriz);
+    }
+    public void transformada14(int dimen, int valInit) {
         String[][] matriz=new String[dimen][dimen];// i =filas, j=columnas
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j <= i; j++) {
@@ -29,30 +83,24 @@ public void transformada14(int dimen, int valInit) {
             EjercicioMatrices mt=new EjercicioMatrices();  
             mt.imprimirContenidoMatrizCadena(matriz);        
         }
-        public void transformada2(int dimension, int valorElem) {
-        String[][] matriz=new String[dimension][dimension];
-        for (int f = 0; f < matriz.length; f++) {
-            for (int c = 0; c < matriz[0].length; c++) {     
-                if (c<dimension-f) {
-                    matriz[f][c]=""+(valorElem+(c+f)*(c+f+1)/2 + c); 
-                }else{
-                    matriz[f][c]="";
+        public void transformada21(int dimen, int numInit) {
+        String[][] matriz=new String[dimen][dimen];// i = Fila; j=Columna
+        for (int j = 0; j < matriz[0].length; j++) {
+            if (j%2==0) {
+                for (int i = 0; i < matriz.length; i++) {
+                    matriz[i][j]=""+numInit;
+                    numInit++;
+                }
+            } else {
+                for (int i = matriz.length-1; i >=0 ; i--) {
+                    matriz[i][j]=""+numInit;
+                    numInit++;
                 }                
-            }
+            } 
         }
-        imprimirMatriz(matriz);
-    }
-    public void transformada05(int dimen, int valInit) {
-        String[][] matriz=new String[dimen][dimen];// i =filas, j=columnas
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j <= i; j++) {
-                matriz[i][(dimen-1)-j]=""+valInit;
-                valInit++;
-            }
-        }
-        imprimirMatrizCadena(matriz);
-    }
-    public void transformada24(int dimen, int valInit) {
+        TransformadasM tm=new TransformadasM();  
+        tm.imprimirContenidoMatrizCadena(matriz);
+public void transformada24(int dimen, int valInit) {
         String[][] matriz=new String[dimen][dimen];// i =filas, j=columnas
         for (int j = matriz[0].length-1; j>=0 ; j--) {
             if(j%2==0){
@@ -69,3 +117,4 @@ public void transformada14(int dimen, int valInit) {
         }
         imprimirMatrizCadena(matriz);
     }
+    
